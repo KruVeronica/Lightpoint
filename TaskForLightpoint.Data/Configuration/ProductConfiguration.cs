@@ -23,14 +23,20 @@ namespace TaskForLightpoint.Configuration
                 new Product
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Test 1.0",
-                    Description = "Test 1.1"
+                    Name = "Gas grill Spirit II E-210",
+                    Description = "Sleek Spirit II E-210 gas grill"
                 },
                 new Product
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Test 2.0",
-                    Description = "Test 2.1"
+                    Name = "Hair Shampoo With Macadamia Oil",
+                    Description = "KAYPRO shampoo 1000ml"
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Toy for dogs with a squeaker (Raccoon)",
+                    Description = "Triol toy 31cm"
                 }
             );
         }

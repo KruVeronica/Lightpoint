@@ -1,12 +1,11 @@
 ﻿@model TaskForLightpoint.Models.ShopProduct
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add a new product to the shop";
 }
 
-<h1>Create</h1>
+<h3>Add a new product to the selected shop</h3>
 
-<h4>ShopProduct</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,14 +22,15 @@
                 <select asp-for="ProductFK" class ="form-control" asp-items="ViewBag.ProductFK"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Add" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Shop" asp-action="Index">Back to all shops</a>
+    @*<a asp-controller="ShopProduct" asp-action="Products" asp-route-id="@item.Id">Show all products</a> |*@
 </div>
 
 @section Scripts {

@@ -25,16 +25,16 @@ namespace TaskForLightpoint.Configuration
                 new Shop
                 {
                     Id = Guid.NewGuid(),
-                        Name = "Test 1.0",
-                        Adress = "Test 1.1",
-                        OpeningHours = "Test1.2"
+                        Name = "Gippo",
+                        Adress = "g. Minsk, Igumenskiy trakt, 30",
+                        OpeningHours = "10-20"
                 },
                 new Shop
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Test 2.0",
-                    Adress = "Test 2.1",
-                    OpeningHours = "Test2.2"
+                    Name = "Evroopt",
+                    Adress = "g. Minsk, ul. I.Goshkevicha, 3",
+                    OpeningHours = "8-22"
                 }
             );
         }

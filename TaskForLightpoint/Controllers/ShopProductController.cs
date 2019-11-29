@@ -37,7 +37,7 @@ namespace TaskForLightpoint.Controllers
             return View("Index", _shopService.GetProductsByShopId(id));
         }
 
-        // GET: ShopProduct/Details/5
+        /*// GET: ShopProduct/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -52,13 +52,13 @@ namespace TaskForLightpoint.Controllers
             }
 
             return View(shopProduct);
-        }
+        }*/
 
         // GET: ShopProduct/Create
         public IActionResult Create(Guid id)
         {
-            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Description");
-            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Adress", id);
+            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Name");
+            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Name", id);
             ViewBag.ShopId = id;
             return View();
         }
@@ -76,14 +76,14 @@ namespace TaskForLightpoint.Controllers
                 _shopService.CreateShopProduct(shopProduct);
                 return RedirectToAction("Products", new { id = shopProduct.ShopFK });
             }
-            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Description", shopProduct.ProductFK);
-            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Adress", shopProduct.ShopFK);
+            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Name", shopProduct.ProductFK);
+            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Name", shopProduct.ShopFK);
             return View(shopProduct);
             //return RedirectToAction(nameof(Index));
         }
 
         // GET: ShopProduct/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        /*public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
@@ -95,8 +95,8 @@ namespace TaskForLightpoint.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Description", shopProduct.ProductFK);
-            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Adress", shopProduct.ShopFK);
+            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Name", shopProduct.ProductFK);
+            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Name", shopProduct.ShopFK);
             return View(shopProduct);
         }
 
@@ -131,13 +131,13 @@ namespace TaskForLightpoint.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Description", shopProduct.ProductFK);
-            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Adress", shopProduct.ShopFK);
+            ViewData["ProductFK"] = new SelectList(_productService.GetAllProducts().Result, "Id", "Name", shopProduct.ProductFK);
+            ViewData["ShopFK"] = new SelectList(_shopService.GetAllShops(), "Id", "Name", shopProduct.ShopFK);
             return View(shopProduct);
-        }
+        }*/
 
         // GET: ShopProduct/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        /*public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -160,7 +160,7 @@ namespace TaskForLightpoint.Controllers
         {
             _shopService.DeleteShopProduct(id);
             return RedirectToAction(nameof(Index));
-        }
+        }*/
 
         private bool ShopProductExists(Guid id)
         {
